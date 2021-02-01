@@ -2,7 +2,8 @@
   <div>
     Title
     <input v-model="title" />
-    <button @click="handleSubmit">SUBMIT</button>
+    <!--this way the sync is bidirectional and reactive to any changes-->
+    <button @click="handleSubmit" class="btn btn dark">SUBMIT</button>
   </div>
 </template>
 
