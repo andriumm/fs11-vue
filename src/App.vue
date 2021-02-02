@@ -1,14 +1,24 @@
 <template>
-  <div>
-    <h1>Hello World</h1>
-    <button @click="isAdmin = true" :class="{ 'bg-warning': isAdmin }">
+  <div class="text-center">
+    <h1 class="mt-5">My Portfolio</h1>
+    <br />
+    <button
+      @click="isAdmin = true"
+      class=" btn btn-dark"
+      :class="{ 'bg-warning': isAdmin }"
+    >
       ADMIN
     </button>
-    <button @click="isAdmin = false" :class="{ 'bg-warning': !isAdmin }">
+    <button
+      @click="isAdmin = false"
+      class=" btn btn-dark"
+      :class="{ 'bg-warning': !isAdmin }"
+    >
       USER
     </button>
+    <br /><br />
     <admin-view v-if="isAdmin" @createProject="addProject" />
-    <user-view v-else />
+    <user-view img="image" v-else />
   </div>
 </template>
 
@@ -35,16 +45,9 @@ export default {
     addProject(project) {
       this.allProjects.push(project);
     }
+    //should we put in here the information we want to get from the child? $event
   }
 };
 </script>
 
 <style></style>
-
-<!-- I don't see the:
- var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-}) -->
